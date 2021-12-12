@@ -4,6 +4,8 @@
 
 Install Gogs into a Synology NAS.
 
+**This branch requires DSM version 6.0.5940 or higher installed on your NAS.**
+
 ## Requirements
 
 <sub>this package, to see Gogs requirements check https://gogs.io</sub>
