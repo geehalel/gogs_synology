@@ -1,0 +1,43 @@
+[
+{
+    "step_title": "Gogs configuration: User and Shared",
+    "items": [
+        {
+        "type": "textfield",
+        "desc": "Gogs user and group",
+        "subitems": [
+            {
+                "key": "pkgwizard_username",
+                "desc": "Gogs username",
+                "defaultValue": "gogs",
+                "validator": {
+                    "allowBlank": false,
+                    "minLength": 2,
+                    "maxLength": 10
+                }
+            },
+            {
+                "key": "pkgwizard_groupname",
+                "desc": "Gogs groupname",
+                "defaultValue": "gogs",
+                "validator": {
+                    "allowBlank": false,
+                    "minLength": 2,
+                    "maxLength": 10
+                }
+            }
+        ]
+        }
+    ]
+},
+{
+    "step_title": "Gogs configuration: Debug",
+    "items": [{
+        "type": "multiselect",
+        "desc": "Check to create debug when start and see what happens behind the scenes (New log file at each start)",
+        "subitems": [{
+          "key": "wizard_create_log",
+            "desc": "Create log file at start"
+        }]
+    }]
+}]

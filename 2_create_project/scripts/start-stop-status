@@ -8,26 +8,29 @@ PACKAGE="gogs"
 DNAME="Gogs"
 
 # Others
-INSTALL_DIR="/usr/local/${PACKAGE}"
+#INSTALL_DIR="/usr/local/${PACKAGE}"
+INSTALL_DIR=${SYNOPKG_PKGDEST}
 DIR_GOGS="${INSTALL_DIR}/gogs"
 GOGS="${DIR_GOGS}/gogs"
-PID_FILE="/var/run/gogs.pid"
-LOG_FILE="/var/log/gogs.log"
+PKG_DIR="/var/packages/${DNAME}"
+PERMANENT_DIR="${PKG_DIR}/etc"
 
-FILE_CREATE_LOG="${DIR_GOGS}/wizard_create_log"
+PID_FILE="${PERMANENT_DIR}/gogs.pid"
+LOG_FILE="${PERMANENT_DIR}/gogs.log"
 
 export HOME=${DIR_GOGS}
 #export PATH=$PATH:~/opt/bin  # to Git. Not necessary with Git Server (Synology)
-export USER=root
-export USERNAME=root
+#export USER=root
+#export USERNAME=root
 
 start_daemon ()
 {
-    if [ -e ${FILE_CREATE_LOG} ]; then
+    cd ${HOME}
+    #if [ -e ${FILE_CREATE_LOG} ]; then
         ${GOGS} web > ${LOG_FILE} 2>&1 &
-    else
-        ${GOGS} web > /dev/null 2>&1 &
-    fi
+    #else
+    #    ${GOGS} web > /dev/null 2>&1 &
+    #fi
     echo $! > ${PID_FILE}
 }
 
