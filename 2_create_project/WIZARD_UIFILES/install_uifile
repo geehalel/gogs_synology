@@ -1,0 +1,23 @@
+[
+{
+    "step_title": "Gogs configuration: Shared folder for repositories",
+    "items": [
+        {
+        "type": "textfield",
+        "desc": "Gogs repositories folder.",
+        "subitems": [
+            {
+            "key": "pkgwizard_foldername",
+                "desc": "Folder name",
+                "defaultValue": "Gogs",
+                "validator": {
+                    "allowBlank": false,
+                    "minLength": 2,
+                    "maxLength": 10
+                }
+            }
+        ]
+        }
+    ]
+}
+]

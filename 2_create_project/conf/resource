@@ -1,5 +1,17 @@
 {
     "port-config": {
         "protocol-file": "port_conf/gogs.sc"
+    },
+    "data-share": {
+        "shares": [
+            {
+                "name": "{{pkgwizard_foldername}}",
+                "permission": {
+                    "ro": ["admin"],
+                    "rw": ["Gogs"]
+                },
+                "once": true
+            }
+        ]
     }
 }

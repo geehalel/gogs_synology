@@ -1,0 +1,53 @@
+[
+{
+    "step_title": "Gogs configuration: Shared volume/folder for repositories",
+    "items": [
+        {
+        "type": "combobox",
+        "desc": "Please select a volume",
+        "subitems": [
+            {
+            "key": "pkgwizard_volume",
+            "desc": "Volume name",
+            "displayField": "display_name",
+            "valueField": "volume_path",
+            "editable": false,
+            "mode": "remote",
+            "api_store": {
+                "api": "SYNO.Core.Storage.Volume",
+                "method": "list",
+                "version": 1,
+                "baseParams": {
+                    "limit": -1,
+                    "offset": 0,
+                    "location": "internal"
+                },
+                "root": "volumes",
+                "idProperty": "volume_path",
+                "fields": ["display_name", "volume_path"]
+            },
+            "validator": {
+                "fn": "{console.log(arguments);return true;}"
+            }
+            } 
+        ]
+        },
+        {
+        "type": "textfield",
+        "desc": "Gogs repositories folder.",
+        "subitems": [
+            {
+            "key": "pkgwizard_foldername",
+                "desc": "Folder name",
+                "defaultValue": "Gogs",
+                "validator": {
+                    "allowBlank": false,
+                    "minLength": 2,
+                    "maxLength": 10
+                }
+            }
+        ]
+        }
+    ]
+}
+]
