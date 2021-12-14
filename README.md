@@ -58,12 +58,12 @@
   - otherwise remote user/passwd stored in repo/config file
   - modify Gogs internal user `.gitconfig` file
   
-  ```
+```
 vi /var/packages/Gogs/target/gogs/.gitconfig
 [http "https://gogs.remote"]
 	sslCAPath = /etc/ssl/certs/
 	sslCAInfo = /etc/ssl/certs/myHomeCA.crt
-  ``` 
+``` 
 
 # gogs-synology
 
