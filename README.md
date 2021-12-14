@@ -52,10 +52,8 @@
 - **add reverse proxy for https access**: Not implemented. 
   - before first launch, in post-inst. Needs root privilege.
 - **MariaDB creation**: `conf/resource` mariadb10-db. Not implemented.
-- **Manage public keys for remote repo mirroring**: Not implemented.
-  - put Gogs `$HOME/.ssh` in permanent storage `/var/packages/Gogs/target/etc/`
-- **Manage certificates for private repo mirroring**: Not implemented.
-  - otherwise remote user/passwd stored in repo/config file
+- **Manage certificates for remote repo mirroring**: Not implemented.
+  - put Gogs `$HOME/.gitconfig` in permanent storage `/var/packages/Gogs/target/etc/`
   - modify Gogs internal user `.gitconfig` file
   
 ```
@@ -64,6 +62,10 @@ vi /var/packages/Gogs/target/gogs/.gitconfig
 	sslCAPath = /etc/ssl/certs/
 	sslCAInfo = /etc/ssl/certs/myHomeCA.crt
 ``` 
+
+- **Manage public keys for private repo mirroring**: Not implemented.
+  - otherwise remote user/passwd stored in repo/config file
+  - put Gogs `$HOME/.ssh` in permanent storage `/var/packages/Gogs/target/etc/`
 
 # gogs-synology
 
